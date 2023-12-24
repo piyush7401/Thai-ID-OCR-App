@@ -52,7 +52,63 @@ async function getAllOCRRecords(req, res){
       console.error(error);
       res.status(500).json({ error: 'Internal Server Error' });
     }
-  },
+  };
+
+  async function getSpecificOCRRecord(req, res){
+    try {
+      const id = req.params.id;
+      const specificRecord = await OCRRecord.findById(id);
+
+      if (!specificRecord) {
+        return res.status(404).json({ error: 'Record not found' });
+      }
+
+      res.json(specificRecord);
+
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  };
+
+  async function updateOCRRecord(req, res){
+    try {
+      const id = req.params.id;
+      const updatedRecord = await OCRRecord.findByIdAndUpdate(
+        id,
+        req.body,
+        { new: true, runValidators: true }
+      );
+
+      if (!updatedRecord) {
+        return res.status(404).json({ error: 'Record not found' });
+      }
+
+      res.json(updatedRecord);
+
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  };
+
+  async function deleteOCRRecord(req, res){
+    try {
+      const id = req.params.id;
+      const deletedRecord = await OCRRecord.findByIdAndDelete(id);
+
+      if (!deletedRecord) {
+        return res.status(404).json({ error: 'Record not found' });
+      }
+
+      res.json({ message: 'Record deleted successfully' });
+
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  };
 
 
-module.exports = {createOCRRecord , getAllOCRRecords ,};
+
+module.exports = {createOCRRecord , getAllOCRRecords , getSpecificOCRRecord, updateOCRRecord, deleteOCRRecord};
