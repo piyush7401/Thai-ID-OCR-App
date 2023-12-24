@@ -42,7 +42,17 @@ async function createOCRRecord(req,res){
     }
 };
 
+async function getAllOCRRecords(req, res){
+    try {
+      const allRecords = await OCRRecord.find({});
+    //   we are showing all the entries . 
+      res.json(allRecords);
+    } 
+    catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  },
 
 
-
-module.exports = {createOCRRecord};
+module.exports = {createOCRRecord , getAllOCRRecords ,};
