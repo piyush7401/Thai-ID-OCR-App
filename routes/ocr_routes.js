@@ -1,7 +1,7 @@
 // Creation of routes
 const express = require('express');
 const router = express.Router();
-const {getAllOCRRecords, getSpecificOCRRecord, createOCRRecord, updateOCRRecord, deleteOCRRecord} = require('../controllers/ocrController');
+const {getAllOCRRecords, getSpecificOCRRecord, createOCRRecord, updateOCRRecord, deleteOCRRecord} = require('../controllers/ocr_controller');
 const multer = require('multer');
 
 // Multer setup for handling file uploads
@@ -28,7 +28,5 @@ router.put('/api/ocr/:id', updateOCRRecord);
 // Delete an OCR record by ID
 router.delete('/api/ocr/:id', deleteOCRRecord);
 
-router.get('/ocr', ocrController.getOCRRecords);
-router.delete('/ocr/:id', ocrController.deleteOCRRecord);
 
 module.exports = router;

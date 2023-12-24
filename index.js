@@ -1,11 +1,14 @@
-const mongoose = require("mongoose")
-const express = require("express")
-const app = express()
-const ocrRoutes = require('./routes/ocrRoutes')
-const port = 8000;
+const express = require('express');
+const mongoose = require('mongoose');
+const multer = require('multer');
+const ocrRoutes = require('./routes/ocr_routes');
+
+const app = express();
+const PORT = 8000;
+
 
 // Connection of mongodb
-mongoose.connect('your-mongodb-connection-string', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost:27017/ocr_database', { useNewUrlParser: true, useUnifiedTopology: true });
 
 // middlewares 
 app.use(express.json());
@@ -14,7 +17,7 @@ app.use(express.json());
 app.use('/api', ocrRoutes);
 
 
-app.listen(port,(req,res) =>{
+app.listen(PORT,(req,res) =>{
     console.log("Server started");
 });
 

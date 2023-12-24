@@ -111,4 +111,4 @@ async function getAllOCRRecords(req, res){
 
 
 
-module.exports = {createOCRRecord , getAllOCRRecords , getSpecificOCRRecord, updateOCRRecord, deleteOCRRecord};
+module.exports = {getAllOCRRecords, getSpecificOCRRecord, createOCRRecord, updateOCRRecord, deleteOCRRecord};
