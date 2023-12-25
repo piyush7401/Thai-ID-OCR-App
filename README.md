@@ -25,3 +25,29 @@ This project utilizes the Google Cloud Vision API for optical character recognit
 1. **Start the Backend Server:**
    ```bash
    npm run start
+
+2. **Start the Frontend Development Server:**
+   cd frontend
+   npm start
+
+3. **Open the App**
+   Open the app in your browser (usually at http://localhost:3000)
+
+## API Endpoints
+
+1. **GET /ocr/all**
+   Get all OCR records.
+
+2. **GET /ocr/:id**
+   Get a specific OCR record by ID.
+
+3. **POST /ocr/create**
+   Upload and process a new OCR record.
+
+4. **PUT /ocr/:id**
+   Update an existing OCR record.
+   
+6. **DELETE /ocr/:id**
+   Delete an OCR record.
+
+   
