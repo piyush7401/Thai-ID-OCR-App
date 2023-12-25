@@ -1,1 +1,1 @@
-# OCR Project
+# Thai ID OCR App
