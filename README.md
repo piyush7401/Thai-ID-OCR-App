@@ -20,3 +20,8 @@ This project utilizes the Google Cloud Vision API for optical character recognit
    - React is used for the frontend.
    - Install dependencies: `npm install`.
    - Start the development server: `npm start`.
+## Usage
+
+1. **Start the Backend Server:**
+   ```bash
+   npm run start
