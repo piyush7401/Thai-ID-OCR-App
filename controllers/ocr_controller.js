@@ -1,16 +1,13 @@
 const OCRRecord = require('../models/ocr_record');
+const { detectThaiIDInfo} = require('../utils/ocr');
 
 async function createOCRRecord(req,res){
     try {
-        const body = req.body;
-      
-        // Check if the required fields are present in the request body
-        if (!body || !body.identification_number || !body.name || !body.last_name || !body.date_of_birth || !body.date_of_issue || !body.date_of_expiry) {
-          return res.status(400).json({ error: 'Incomplete or missing data in the request body.' });
-        }
-      
-        // Implement OCR processing logic here...
-      
+        
+        const fileBuffer = req.file.buffer;
+
+        const body = await detectThaiIDInfo(fileBuffer);
+
         // Use data from req.body instead of hardcoded values
         const ocrData = {
           identification_number: body.identification_number,

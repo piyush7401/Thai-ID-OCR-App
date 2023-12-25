@@ -1,4 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
+import axios from 'axios';
+
 
 const OcrContext = createContext();
 
@@ -14,27 +16,18 @@ export const OcrProvider = ({ children }) => {
   };
 
   const handleUpload = async () => {
-    setError(null);
-    setOcrData(null);
-
-    const formData = new FormData();
-    formData.append('idCardImage', file);
-
     try {
-      // Replace the API URL with your actual backend URL
-      const response = await fetch('http://localhost:8000/api/ocr/create', {
-        method: 'POST',
-        body: formData,
-      });
-
-      const result = await response.json();
-
-      setOcrData(result);
-    } catch (err) {
-      setError('Error uploading the file');
-      console.error(err);
+      const formData = new FormData();
+      formData.append('idCardImage', file);
+  
+      const response = await axios.post('http://localhost:8000/api/ocr/create', formData);
+  
+      console.log('OCR Result:', response.data.ocrData);
+    } catch (error) {
+      console.error('Upload and OCR Error:', error.message);
     }
   };
+  
 
   const contextValue = {
     file,
