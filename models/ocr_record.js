@@ -1,4 +1,4 @@
-// Creation of model ocr_record.
+// Creation of model ocr_record
 const mongoose = require('mongoose');
 
 const ocrRecordSchema = new mongoose.Schema({
