@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const multer = require('multer');
 const ocrRoutes = require('./routes/ocr_routes');
+const cors = require('cors');
 
 const app = express();
 const PORT = 8000;
@@ -11,6 +12,7 @@ const PORT = 8000;
 mongoose.connect('mongodb://localhost:27017/ocr_database', { useNewUrlParser: true, useUnifiedTopology: true });
 
 // middlewares 
+app.use(cors());
 app.use(express.json());
 
 // routes 
