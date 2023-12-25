@@ -27,10 +27,11 @@ This project utilizes the Google Cloud Vision API for optical character recognit
    npm run start
 
 2. **Start the Frontend Development Server:**
+   ```bash
    cd frontend
    npm start
 
-3. **Open the App**
+4. **Open the App**
    Open the app in your browser (usually at http://localhost:3000)
 
 ## API Endpoints
