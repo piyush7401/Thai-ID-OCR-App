@@ -51,4 +51,14 @@ This project utilizes the Google Cloud Vision API for optical character recognit
 6. **DELETE /ocr/:id**
    Delete an OCR record.
 
-   
+## Tech Stack
+
+- **Backend**: Node.js, Express.js
+- **OCR Integration**: Google Cloud Vision API
+- **Frontend**: React.js
+- **Database**: [Specify your database here, e.g., MongoDB, MySQL]
+- **ORM (Object-Relational Mapping)**: [Specify if applicable, e.g., Mongoose]
+- **Middleware for File Uploads**: Multer
+- **HTTP Client for API Requests**: Axios
+- **Other Dependencies**: nodemon,react-router-dom,react-dom,cors
+
