@@ -5,3 +5,18 @@ This project utilizes the Google Cloud Vision API for optical character recognit
 - **Data Modification:** Modify extracted data as needed.
 - **Data Filtering:** Implement filters to narrow down specific information.
 - **Data Deletion:** Delete certain ID card records from the system.
+## Setup
+
+1. **Google Cloud Vision API:**
+   - Create a Google Cloud Platform (GCP) project.
+   - Enable the Cloud Vision API and obtain API credentials.
+
+2. **Backend Setup:**
+   - Install Node.js and npm.
+   - Install project dependencies: `npm install`.
+   - Set up environment variables for API credentials.
+
+3. **Frontend Setup:**
+   - React is used for the frontend.
+   - Install dependencies: `npm install`.
+   - Start the development server: `npm start`.
